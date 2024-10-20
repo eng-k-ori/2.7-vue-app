@@ -2,7 +2,8 @@
   <div id="app">
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/form">RegistForm</router-link>
+      <router-link to="/form">RegistForm</router-link> |
+      <router-link to="/mod-form">ModRegistForm</router-link>
     </nav>
     <router-view />
   </div>

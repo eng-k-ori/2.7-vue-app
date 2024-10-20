@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import HelloPage from "@/pages/HelloPage.vue";
 import RegistForm from "@/pages/RegistForm.vue";
+import ModRegistForm from "@/pages/ModRegistForm.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes: Array<RouteConfig> = [
     path: "/form",
     name: "form",
     component: RegistForm,
+  },
+  {
+    path: "/mod-form",
+    name: "mod-form",
+    component: ModRegistForm,
   },
 ];
 

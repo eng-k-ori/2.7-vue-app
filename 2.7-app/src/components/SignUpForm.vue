@@ -26,7 +26,7 @@
 </template>
 <!-- ================================================================================================ -->
 <script setup lang="ts">
-import { defineProps, defineEmits } from "vue";
+import { defineProps, defineEmits, watch } from "vue";
 // 2 この書き方では単にプロパティの名前を文字列で指定しているだけで、型指定していない。
 interface signUpFormProps {
   userName: string;
@@ -51,6 +51,7 @@ function updateUserName(e: Event) {
   emit("update:userName", emitValue.value);
   console.log("updateUserNameが発火");
 }
+
 function updatePassword(e: Event) {
   const emitValue = e.target as HTMLInputElement;
   emit("update:password", emitValue.value);
