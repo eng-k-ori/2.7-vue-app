@@ -1,15 +1,23 @@
 <template>
   <ul>
-    <li v-for="(user, index) in props.users" :key="index">{{ user }}</li>
+    <li v-for="(userInfo, id) in props.userInfos" :key="id">
+      {{ id + 1 }}: {{ userInfo }}
+    </li>
   </ul>
 </template>
 
 <script setup lang="ts">
-// 親からユーザーリストを受け取るpropを定義
 import { defineProps } from "vue";
-const props = defineProps<{ users: string[] }>();
-</script>
 
+interface UserListProps {
+  userInfos: Array<string>;
+}
+
+// const props = defineProps<{ userInfos: Array<string> }>()
+const props = defineProps<UserListProps>();
+</script>
 <style scoped>
-li {background-color: lightseagreen;}
+li {
+  background-color: lightskyblue;
+}
 </style>
