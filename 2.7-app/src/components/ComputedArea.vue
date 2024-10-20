@@ -17,7 +17,7 @@
     <input type="number" :value="props.sumNum" readonly />
   </div>
 </template>
-
+<!-- ================================================================================================ -->
 <script setup lang="ts">
 import { defineProps, defineEmits } from "vue";
 interface computedAreaProps {
