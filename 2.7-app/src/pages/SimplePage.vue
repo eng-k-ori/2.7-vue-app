@@ -34,6 +34,7 @@ function registerUser() {
 function clearUserName() {
   console.log("clearUserName"); // デバッグ用ログ
   userName.value = "";
+  userList.value = [];
 }
 </script>
 
