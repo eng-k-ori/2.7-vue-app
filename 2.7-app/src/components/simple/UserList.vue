@@ -13,8 +13,19 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
 
-// 親から受け取るuserInfosプロパティを定義
-defineProps<{ userInfos: Array<{ name: string; selection: string }> }>();
+// userInfosの型をinterfaceで定義
+interface UserInfo {
+  name: string;
+  selection: string;
+}
+
+// propsの型を定義
+interface UserListProps {
+  userInfos: Array<UserInfo>;
+}
+
+// 分割代入でpropsを取得
+const { userInfos } = defineProps<UserListProps>();
 </script>
 
 <style scoped>
