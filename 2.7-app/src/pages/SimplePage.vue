@@ -7,17 +7,15 @@
       @clear="clearUserName"
     />
 
-    <ul>
-      <li v-for="(user, index) in userList" :key="index">
-        {{ index + 1 }}: {{ user }}
-      </li>
-    </ul>
+    <!-- UserListを使用し、userListをpropsで渡す -->
+    <UserList :userInfos="userList" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 import UserForm from "@/components/simple/UserForm.vue";
+import UserList from "@/components/simple/UserList.vue";
 
 // ユーザー名とユーザーリストを管理するref
 const userName = ref<string>("");
@@ -40,6 +38,50 @@ function clearUserName() {
 </script>
 
 <style scoped>
+div {
+  padding: 20px;
+}
+</style>
+
+<!-- <template>
+  <div>
+    <UserForm
+      :modelValue="userName"
+      @update:modelValue="userName = $event"
+      @register="registerUser"
+      @clear="clearUserName"
+    />
+
+    <ul>
+      <li v-for="(user, index) in userList" :key="index">
+        {{ index + 1 }}: {{ user }}
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from "vue";
+import UserForm from "@/components/simple/UserForm.vue";
+
+const userName = ref<string>("");
+const userList = ref<Array<string>>([]);
+
+function registerUser() {
+  console.log("registerUser");
+  if (userName.value.trim()) {
+    userList.value.push(userName.value.trim());
+    userName.value = "";
+  }
+}
+
+function clearUserName() {
+  console.log("clearUserName");
+  userName.value = "";
+}
+</script>
+
+<style scoped>
 ul {
   list-style-type: none;
   padding: 0;
@@ -55,4 +97,4 @@ li {
 div {
   padding: 20px;
 }
-</style>
+</style> -->
